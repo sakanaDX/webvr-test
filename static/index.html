@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<script type="module">
+  import { sleep } from "https://code4sabae.github.io/js/sleep.js";
+
+  window.onload = () => {
+   document.body.onclick = async () => {
+    danb.setAttribute("position", { x:0, y:5, z:0 });
+    await sleep(500);
+    danb.setAttribute("position", { x:0, y:0, z:0 });
+   };
+  };
+</script>
+
+</head><body>
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<a-scene id="scene">
+
+<a-entity light="color: #ff0000; intensity: 5" position="-1 1 0"></a-entity>
+<a-light intensity="1">
+  <a-animation attribute="intensity" to="100"></a-animation>
+</a-light>
+<a-text position="0 0 -400" width="1000" height="1000" depth="1000" align="center" value="KINTORE WORLD"></a-text>
+
+<a-entity  id="danb">
+<a-box   position="0 5 -10" width="12" height="3" depth="3" color="#000000"></a-box>
+<a-sphere position="7 5 -10" radius="4" color="#000000"></a-sphere>
+<a-sphere position="-7 5 -10" radius="4" color="#000000"></a-sphere>
+</a-entity>
+
+<a-entity  animation="property:rotation; to:360 0 0; dur:50000; easing:linear; loop:true">
+<a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="10" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="30" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="50" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="70" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="90" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="110" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="130" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="150" theta-length="10" ></a-sky>
+      <a-sky material="color: #000000" scale="0.5 0.5 0.5" theta-start="170" theta-length="10" ></a-sky>
+      <a-sky material="color: #ff0000" scale="1 1 1"></a-sky>
+</a-entity>
+</a-scene>
+</body>
+</html>
